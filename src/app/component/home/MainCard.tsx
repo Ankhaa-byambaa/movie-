@@ -1,10 +1,10 @@
 import {
   Card,
-  CardAction,
+  // CardAction,
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
+  // CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 type card1Type = {
@@ -12,7 +12,7 @@ type card1Type = {
   title: string;
   image: string;
 };
-export function Card1({ score, title, image }: card1Type) {
+export function MainCard({ score, title, image }: card1Type) {
   return (
     <>
       <Card

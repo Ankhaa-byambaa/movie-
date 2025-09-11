@@ -17,7 +17,7 @@ export function SectionMain({ mainTitle }: SectionMainTYpe) {
         </div>
         <div className="overflow-y-scroll w-full h-[912px] ">
           <div className="flex gap-8 flex-row flex-wrap">
-            <MainCard title="Dear Santa" score={6.9} image="1.1.jpeg" />
+            <MainCard title="dear santa" score={6.9} image="1.1.jpeg" />
             <MainCard
               title="How To Train Your Dragon Live Action"
               score={4.9}

@@ -22,7 +22,10 @@ export function MainCard({ score, title, image }: card1Type) {
       >
         <CardContent className={"p-0 "}>
           <div className=" bg-black h-[340px]">
-            <img className="w-[230px]  hover:opacity-50" src={image} />
+            <img
+              className="w-[230px]  hover:opacity-50"
+              src={`https://image.tmdb.org/t/p/w500/${image}`}
+            />
           </div>
         </CardContent>
 

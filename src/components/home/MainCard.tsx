@@ -34,6 +34,7 @@ export function MainCard({ score, title, image }: card1Type) {
             <img className="w-[14px] h-[]14px" src={"star.svg"} />
             <span className="test-3">{score}/10</span>
           </CardDescription>
+
           <CardTitle className="text-[18px] text-[#09090B] text-semibold  ">
             {title}
           </CardTitle>

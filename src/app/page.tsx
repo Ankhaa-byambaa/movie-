@@ -5,6 +5,12 @@ import { ModeToggle } from "../components/home/ThemeToggle";
 import { TrailerSection } from "../components/home/TrailerSection";
 import { MainCard } from "../components/home/MainCard";
 import { Header } from "@/components/home/Header";
+//1. home pagiin hee buh style css iig bichij shalgaj duusagh
+//-header
+//-trailersection
+//-main cards iin haa popular , top rated iig duusgah
+//-footer ee shalgah
+//-movie datails page iinhee sketch iig hargah
 type MovieType = {
   adult: boolean;
   backdrop_path: string;

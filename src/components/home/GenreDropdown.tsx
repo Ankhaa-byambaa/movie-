@@ -111,10 +111,13 @@ export function GenreDropdown() {
         </DropdownMenuLabel>
         <p className="px-2">See list of movies by genre</p>
         <DropdownMenuSeparator className="my-[10px]" />
-        <DropdownMenuItem className="hover:!bg-transparent">
+        <DropdownMenuItem className="hover:!bg-transparent  flex gap-4 flex-wrap items-start">
           {GENRES.map((genre) => (
             <Link href="/movieDetails">
-              <Badge variant="outline" className="">
+              <Badge
+                variant="outline"
+                className="flex gap-2 hover:bg-[#0000001D] "
+              >
                 {genre.name}
                 <ChevronRight />
               </Badge>

@@ -31,7 +31,7 @@ export function MainCard({ score, title, image }: card1Type) {
 
         <CardFooter className={"flex flex-col items-start p-2 "}>
           <CardDescription className={"flex gap-2"}>
-            <img className="w-[14px] h-[]14px" src={"star.svg"} />
+            <img className="w-[14px] h-[14px]" src={"star.svg"} />
             <span className="test-3">{score}/10</span>
           </CardDescription>
 

@@ -1,34 +1,17 @@
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { Footer } from "../components/home/Footer";
-import { SectionMain } from "../components/home/SectionMain";
+
 import { ModeToggle } from "../components/home/ThemeToggle";
 import { TrailerSection } from "../components/home/TrailerSection";
 import { MainCard } from "../components/home/MainCard";
 import { Header } from "@/components/home/Header";
+// import { HomePage } from "@/components/home/HomePageSkeleton";
 //1. home pagiin hee buh style css iig bichij shalgaj duusagh
 //-header
 //-trailersection
 //-main cards iin haa popular , top rated iig duusgah
 //-footer ee shalgah
 //-movie datails page iinhee sketch iig hargah
-type MovieType = {
-  adult: boolean;
-  backdrop_path: string;
-  genre_ids: number[];
-  id: number;
-  original_language: string;
-  overview: string;
-  poster_path: string;
-  release_date: string;
-  title: string;
-  vote_average: number;
-};
-
-type movieResponseType = {
-  page: number;
-  totalPages: number;
-  results: MovieType[];
-};
 
 export default async function Home() {
   const getUpcomingMovies = async () => {
@@ -54,7 +37,7 @@ export default async function Home() {
     <>
       <div className="flex gap-[52px] flex-col ">
         <Header />
-        {/* <TrailerSection /> */}
+        <TrailerSection />
 
         <div className="ml-20  ">
           <div>

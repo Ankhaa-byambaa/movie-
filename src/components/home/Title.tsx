@@ -11,22 +11,6 @@ export function Title() {
     title: string;
     vote_average: number;
   };
-  //   color: var(--text-text-foreground, #09090B);
-
-  // /* xsmall */
-  // font-family: Inter;
-  // font-size: 12px;
-  // font-style: normal;
-  //   color: var(--text-text-muted-foreground, #71717A);
-
-  // /* Font Sizes/text-xs */
-  // font-family: Inter;
-  // font-size: 12px;
-  // font-style: normal;
-  // font-weight: 400;
-  // line-height: 16px; /* 133.333% */
-  // font-weight: 500;
-  // line-height: 16px; /* 133.333% */
 
   return (
     <>

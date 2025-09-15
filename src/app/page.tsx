@@ -12,6 +12,24 @@ import { Header } from "@/components/home/Header";
 //-main cards iin haa popular , top rated iig duusgah
 //-footer ee shalgah
 //-movie datails page iinhee sketch iig hargah
+type MovieType = {
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  overview: string;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  vote_average: number;
+};
+
+type movieResponseType = {
+  page: number;
+  totalPages: number;
+  results: MovieType[];
+};
 
 export default async function Home() {
   const getUpcomingMovies = async () => {
@@ -41,7 +59,7 @@ export default async function Home() {
 
         <div className="ml-20  ">
           <div>
-            <span className="w-full flex justify-between items-center mb-8 text-semibold text-[24px] ">
+            <span className="w-full flex justify-between items-center mb-8 text-semibold text-[24px] font-semibold ">
               Upcoming
               <div className="w-[120px] py-2 px-4 flex justify-center  items-center gap-2 text-[14px]">
                 See more <img className="w-[16px] h-[16px] " src="icon1.svg" />

@@ -1,9 +1,9 @@
 // import { MovieType } from "@/types/";
 import { Footer } from "@/components/home/Footer";
-import { Header } from "@/components/home/Header";
 
 import { MainCard } from "@/components/home/MainCard";
-import { Title } from "@/components/home/Title";
+import { MovieType } from "@/types";
+
 type MoviesContainer = {
   movies: MovieType[];
 };
@@ -11,9 +11,6 @@ type MoviesContainer = {
 export function MoviesContainer({ movies }: MoviesContainer) {
   return (
     <div className="flex gap-[52px] flex-col ">
-      {/* <Headers />
-      <TrailerSection /> */}
-
       <div className="ml-20  ">
         <div>
           <span className="w-full flex justify-between items-center mb-8 text-semibold text-[24px] ">

@@ -1,4 +1,4 @@
-type MovieType = {
+export type MovieType = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -11,7 +11,7 @@ type MovieType = {
   vote_average: number;
 };
 
-type movieResponseType = {
+export type movieResponseType = {
   page: number;
   totalPages: number;
   results: MovieType[];

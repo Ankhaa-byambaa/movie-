@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <>
-      <div className=" bg-indigo-700 flex gap-30 py-10 items-start w-full h-[280px] justify-between mt-20  ">
+      <div className="max-[375px]:flex-col bg-indigo-700 flex gap-30 py-10 items-start w-full h-[280px] justify-between mt-20  ">
         <div className="ml-20">
           <span className="text-[#FAFAFA] text-4 flex gap-2 items-start ">
             <img className="h-5" src={"Property 1=Dark Mode.png"} />
@@ -12,7 +12,7 @@ export function Footer() {
           </span>
         </div>
 
-        <div className="flex flex-row gap-[96px] justify-end ">
+        <div className="max-[375px]:flex-col flex flex-row gap-[96px] justify-end ">
           <div>
             <span className="text-[#FAFAFA] flex mb-[12px] ">
               Contact Information

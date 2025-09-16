@@ -24,6 +24,7 @@ export function MoviesContainer({ movies }: MoviesContainer) {
           <div className="flex gap-8 flex-row flex-wrap">
             {movies.map((movie) => (
               <MainCard
+                id={movie.id}
                 key={movie.id}
                 title={movie.title}
                 score={movie.vote_average}

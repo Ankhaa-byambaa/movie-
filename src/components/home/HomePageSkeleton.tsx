@@ -5,7 +5,7 @@ export function HomePageSkeleton() {
     <>
       <Skeleton className="w-screen h-[600px] cursor-wait" />
       {Array.from({ length: 10 }).map((_, i) => {
-        <div className="flex ">
+        <div key={i} className="flex ">
           <Skeleton className="w-[230px] h-[440px] flex flex-wrap gap-8 cursor-wait" />
         </div>;
       })}

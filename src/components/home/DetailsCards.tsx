@@ -5,24 +5,24 @@ import {
   CardFooter,
   CardTitle,
 } from "@/components/ui/card";
-type card1Type = {
+type DetailsCardsProps = {
   score: number;
   title: string;
   image: string;
   id: number;
 };
-export function MainCard({ score, title, image, id }: card1Type) {
+export function DetailsCrads({ title, image, score, id }: DetailsCardsProps) {
   return (
     <>
       <Card
         className={
-          "w-[230px] bg-secondary p-0 overflow-hidden gap-2 hover:bg-[#0000004D] h-[440px]"
+          "w-[190px] bg-secondary p-0 overflow-hidden gap-2 hover:bg-[#0000004D] h-[281px] rounded-2"
         }
       >
         <CardContent className={"p-0 "}>
           <div className=" bg-black h-[340px]">
             <img
-              className="w-[230px]  hover:opacity-50"
+              className="w-[190px]  hover:opacity-50"
               src={`https://image.tmdb.org/t/p/w500/${image}`}
             />
           </div>
@@ -30,7 +30,7 @@ export function MainCard({ score, title, image, id }: card1Type) {
 
         <CardFooter className={"flex flex-col items-start p-2 "}>
           <CardDescription className={"flex gap-2"}>
-            <img className="w-[14px] h-[14px]" src={"star.svg"} />
+            <img className="w-[13px] h-[12px]" src={"star.svg"} />
             <span className="test-3">{score}/10</span>
           </CardDescription>
 

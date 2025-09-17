@@ -48,15 +48,17 @@ type MoviesContainerProps = {
 
 export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
   return (
+
+
     <div>
-      <div className="flex flex-row justify-between w-screen ml-20 mr-20">
-        <p className="text-6 font-bold text-[#09090B]">{title}</p>
-        <div className="text-[14px] text-[#09090B] flex flex-row gap-2 px-2 py-4 ">
-          See more <img className="" src={"arrow-right (1).svg"} />
+      <div className="flex  justify-between w-full  items-center ">
+        <p className="text-[24px] font-bold text-white mb-[52px] mt-[52px]">{title}</p>
+        <div className="text-[14px] text-white flex items-center flex-row gap-2 px-2 py-4 mr-20 ">
+          See more  ›
         </div>
       </div>
 
-      <div className="flex gap-4 flex-wrap">
+      <div className="flex gap-4 flex-wrap mr-20">
         {movies.slice(0, 10).map((movie) => (
           <MainCard
             key={movie.id}

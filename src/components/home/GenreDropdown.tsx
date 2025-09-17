@@ -13,8 +13,8 @@ import Link from "next/link";
 
 import { GenreResponseType } from "@/types";
 import { getMovieGenres } from "@/utils/getDatas";
-type GenreDropdownType = { button: boolean };
-export async function GenreDropdown(button: GenreDropdownType) {
+
+export async function GenreDropdown() {
   const genresResponse: GenreResponseType = await getMovieGenres();
 
   console.log("GENRE RES", genresResponse);

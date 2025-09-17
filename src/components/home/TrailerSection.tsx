@@ -78,7 +78,7 @@ export function TrailerSection() {
   }, [api]);
 
   return (
-    <div className="">
+    <div className="mr-20 mt-10">
       <Carousel setApi={setApi} className=" relative">
         <CarouselContent>
           {trailer.map((movie, index) => (
@@ -126,7 +126,7 @@ export function TrailerSection() {
         <CarouselPrevious className="absolute left-11 py-0 px-0 max-[800px]:invisible" />
         <CarouselNext className="absolute right-11 py-0 px-0 max-[800px]:invisible" />
       </Carousel>
-      <div className="absolute top-[655px] left-[50%] flex gap-2">
+      <div className="absolute top-[65%] left-[50%] flex gap-2">
         {Array.from({ length: count }).map((_, index) => (
           <div
             onClick={() => {

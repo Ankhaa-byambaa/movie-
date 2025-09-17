@@ -9,12 +9,14 @@ export type MovieType = {
   release_date: string;
   title: string;
   vote_average: number;
+  
 };
 
 export type GenreType = {
   id: number;
   name: string;
 };
+
 
 export type GenreResponseType = {
   genres: GenreType[];

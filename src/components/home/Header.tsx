@@ -6,17 +6,17 @@ import { ModeToggle } from "./ThemeToggle";
 export function Header() {
   return (
     <>
-      <header className="w-full ">
+      <header className="w-full mt-5 ">
         <div className="  w-full  flex justify-between m-auto items-center py-3">
           <div>
             <img
               src="movie-z.png"
               className="
- max-[800px]:ml-5 h-5 w-[64px] ml-20 "
+  w-[92px] h-5 ml-20"
             />
-          </div>
-          <div className="flex gap-[22px] max-[800px]:gap-3 ">
-            <div className=" max-[800px]:invisible">
+          </div >
+          <div className="flex gap-[22px] max-[800px]:hidden max-[800px]:bg-amber-700 ">
+            <div className=" max-[800px]:hidden">
               <GenreDropdown />
             </div>
 
@@ -25,7 +25,7 @@ export function Header() {
               <Input className=" pl-10 w-[379px]" placeholder="Search.." />
             </div>
           </div>
-          <div className="px-3  min-[800px]:invisible">
+          <div className="px-3  min-[800px]:hidden">
             <GenreDropdown />
           </div>
           <div className="max-[375px]:mr-5 mr-20">

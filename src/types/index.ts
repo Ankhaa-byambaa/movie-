@@ -11,6 +11,15 @@ export type MovieType = {
   vote_average: number;
 };
 
+export type GenreType = {
+  id: number;
+  name: string;
+};
+
+export type GenreResponseType = {
+  genres: GenreType[];
+};
+
 export type movieResponseType = {
   page: number;
   totalPages: number;

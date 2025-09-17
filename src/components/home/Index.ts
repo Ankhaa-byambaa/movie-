@@ -5,3 +5,8 @@ export * from "./TrailerSection";
 export * from "./ThemeToggle";
 export * from "./DetailsCards";
 export * from "./DetailsCardContainer";
+export * from "./MoviesContainer";
+export * from "./GenreDropdown";
+export * from "./MovieCarousel";
+export * from "./HomePage";
+export * from "./HomePageSkeleton";

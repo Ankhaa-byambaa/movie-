@@ -11,120 +11,44 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
 
-const GENRES = [
-  {
-    name: "Action",
-  },
-  {
-    name: "Adventure",
-  },
-  {
-    name: "Animation",
-  },
-  {
-    name: "Biography",
-  },
-  {
-    name: "comedy",
-  },
-  {
-    name: "Crime",
-  },
-  {
-    name: "Documentary",
-  },
-  {
-    name: "Drama",
-  },
-  {
-    name: "Family",
-  },
-  {
-    name: "Fantasy",
-  },
-  {
-    name: "Film-Noir",
-  },
-  {
-    name: "Game-Show",
-  },
-  {
-    name: "History",
-  },
-  {
-    name: "Horror",
-  },
-  {
-    name: "Music",
-  },
-  {
-    name: "Musical",
-  },
-  {
-    name: "Mystery",
-  },
-  {
-    name: "News",
-  },
-  {
-    name: "Drama",
-  },
-  {
-    name: "Reality-TV",
-  },
-  {
-    name: "Romance",
-  },
+import { GenreResponseType } from "@/types";
+import { getMovieGenres } from "@/utils/getDatas";
+type GenreDropdownType = { button: boolean };
+export async function GenreDropdown(button: GenreDropdownType) {
+  const genresResponse: GenreResponseType = await getMovieGenres();
 
-  {
-    name: "Sci-fi",
-  },
-  {
-    name: "Short",
-  },
-  {
-    name: "Talk-Show",
-  },
-  {
-    name: "Thriller",
-  },
+  console.log("GENRE RES", genresResponse);
 
-  {
-    name: "War",
-  },
-  {
-    name: "Western",
-  },
-];
-
-export function GenreDropdown() {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          <ChevronDown /> Genre
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[577px]" align="start">
-        <DropdownMenuLabel className="text-2xl font-bold">
-          Genres
-        </DropdownMenuLabel>
-        <p className="px-2">See list of movies by genre</p>
-        <DropdownMenuSeparator className="my-[10px]" />
-        <DropdownMenuItem className="hover:!bg-transparent  flex gap-4 flex-wrap items-start">
-          {GENRES.map((genr, index) => (
-            <Link key={index} href="/movieDetails/">
-              <Badge
-                variant="outline"
-                className="flex gap-2 hover:bg-[#0000001D] "
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline">
+            <ChevronDown /> Genre
+          </Button>
+        </DropdownMenuTrigger>
+
+        <DropdownMenuContent className="" align="start">
+          <DropdownMenuLabel className="text-2xl font-bold">
+            Genres
+          </DropdownMenuLabel>
+          <p className="px-2">See list of movies by genre</p>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem className="hover:!bg-transparent max-w-[400px] flex flex-wrap">
+            {genresResponse.genres.map((genre) => (
+              <Link
+                key={genre.id}
+                href={`/genre?id=${genre.id}&name=${genre.name}`}
               >
-                {genr.name}
-                <ChevronRight />
-              </Badge>
-            </Link>
-          ))}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+                <Badge variant="outline">
+                  {genre.name}
+                  <ChevronRight />
+                </Badge>
+              </Link>
+            ))}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
   );
 }

@@ -12,41 +12,10 @@ export const getMoviesList = async (listName: string) => {
   const data = await res.json();
   return data;
 };
-export const getMovieDetails = async (movieId: number) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
-    {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${process.env.TMDB_ACCESS_KEY}`,
-      },
-    }
-  );
 
-  const data = await res.json();
-  console.log("MOVIE DETAILS", data);
-  return data;
-};
-export const getMovieStarsDirectorWritersDetails = async (movieId: number) => {
+export const getMovieGenres = async () => {
   const res = await fetch(
-    ` https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
-    {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${process.env.TMDB_ACCESS_KEY}`,
-      },
-    }
-  );
-
-  const data = await res.json();
-  console.log("MOVIE DETAILS", data);
-  return data;
-};
-export const getMovieVideo = async (movieId: number) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/genre/movie/${movieId}/credits?language=en-US`,
+    `https://api.themoviedb.org/3/genre/movie/list?language=en`,
     {
       method: "GET",
       headers: {

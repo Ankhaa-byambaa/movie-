@@ -1,9 +1,12 @@
-import { Header } from "../../../components/home/Header";
+type DetailDynamicPageProps = {
+  params: Promise<{ id: string }>;
+};
 
-export default function searchFilterPage() {
-  return (
-    <>
-      <div>hello</div>
-    </>
-  );
-}
+const DetailDynamicPage = async ({ params }: DetailDynamicPageProps) => {
+  const dynamicParams = await params;
+  const id = dynamicParams.id;
+
+  return <div>DetailDynamicPage {id}</div>;
+};
+
+export default DetailDynamicPage;

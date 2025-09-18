@@ -1,4 +1,3 @@
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,14 +5,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
 import { GenreResponseType } from "@/types";
 import { getMovieGenres } from "@/utils/getDatas";
 import { MainCard } from "@/components/home/MainCard";
 import { movieResponseType } from "@/types";
 import { getMoviesByGenreId } from "@/utils/getDatas";
-
+import { Pagination } from "@/components/home/Pagination";
 
 type GenrePageProps = {
   searchParams: Promise<{ id: string; name: string; page: string }>;
@@ -33,19 +32,19 @@ const Genre = async ({ searchParams }: GenrePageProps) => {
   return (
     <div className="ml-20">
       <p className="text-[#09090B] text-[30px] font-bold">Search filter</p>
-      <div><DropdownMenu>
+      <div>
+        <DropdownMenu>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Billing</DropdownMenuItem>
+            <DropdownMenuItem>Team</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
 
-  <DropdownMenuContent >
-    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Profile</DropdownMenuItem>
-    <DropdownMenuItem>Billing</DropdownMenuItem>
-    <DropdownMenuItem>Team</DropdownMenuItem>
-    <DropdownMenuItem>Subscription</DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
-</div>
-      
       <div className="text-white text-[20px] font-bold mb-8">{name}</div>
       <div className="flex flex-wrap gap-12">
         {filteredMoviesResponse.results.slice(0, 10).map((movie) => (
@@ -58,6 +57,7 @@ const Genre = async ({ searchParams }: GenrePageProps) => {
           />
         ))}
       </div>
+      <Pagination />
     </div>
   );
 };

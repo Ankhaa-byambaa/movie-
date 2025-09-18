@@ -1,8 +1,7 @@
 import { Search } from "lucide-react";
-
-import { Input } from "../ui/input";
 import { GenreDropdown } from "./GenreDropdown";
 import { ModeToggle } from "./ThemeToggle";
+import { SearchSection } from "./SearchSection";
 export function Header() {
   return (
     <>
@@ -14,7 +13,7 @@ export function Header() {
               className="
   w-[92px] h-5 ml-20"
             />
-          </div >
+          </div>
           <div className="flex gap-[22px] max-[800px]:hidden max-[800px]:bg-amber-700 ">
             <div className=" max-[800px]:hidden">
               <GenreDropdown />
@@ -22,7 +21,7 @@ export function Header() {
 
             <div className="max-[800px]:invisible flex items-center">
               <Search className="-mr-8 w-4 h-4" />
-              <Input className=" pl-10 w-[379px]" placeholder="Search.." />
+              <SearchSection />
             </div>
           </div>
           <div className="px-3  min-[800px]:hidden">

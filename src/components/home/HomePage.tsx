@@ -9,14 +9,15 @@ export async function HomePage() {
   const upcomingMovies: movieResponseType = await getMoviesList("upcoming");
   const popularMovies: movieResponseType = await getMoviesList("popular");
   const topRatedMovies: movieResponseType = await getMoviesList("top_rated");
-  const nowPlayingMovies: movieResponseType = await getMoviesList("");
+  const nowPlayingMovies: movieResponseType = await getMoviesList(
+    "now_playing"
+  );
 
   console.log(upcomingMovies);
 
   return (
     <div className="ml-20">
-      <TrailerSection />
-      <MovieCarousel trailer={nowPlayingMovies.results} />
+      {/* <MovieCarousel trailer={nowPlayingMovies.results} /> */}
       <MoviesContainer movies={upcomingMovies.results} title="Upcoming" />
       <MoviesContainer movies={popularMovies.results} title="Popular" />
       <MoviesContainer movies={topRatedMovies.results} title="Top Rated" />

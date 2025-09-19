@@ -16,12 +16,14 @@ export async function HomePage() {
   console.log(upcomingMovies);
 
   return (
-    <div className="ml-20">
-      {/* <MovieCarousel trailer={nowPlayingMovies.results} /> */}
-      <MoviesContainer movies={upcomingMovies.results} title="Upcoming" />
-      <MoviesContainer movies={popularMovies.results} title="Popular" />
-      <MoviesContainer movies={topRatedMovies.results} title="Top Rated" />
-      <Pagination />
-    </div>
+    <>
+      <MovieCarousel trailer={nowPlayingMovies.results} />
+      <div className="ml-20">
+        <MoviesContainer movies={upcomingMovies.results} title="Upcoming" />
+        <MoviesContainer movies={popularMovies.results} title="Popular" />
+        <MoviesContainer movies={topRatedMovies.results} title="Top Rated" />
+        <Pagination />
+      </div>
+    </>
   );
 }

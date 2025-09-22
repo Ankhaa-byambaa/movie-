@@ -66,6 +66,7 @@ export const getMoviesList = async (listName: string) => {
   );
   return data;
 };
+
 export const getSearchedMovies = async (searchValue: string) => {
   const res = await instance.get(
     `search/movie?query=${searchValue}&language=en-US&page=${1}`

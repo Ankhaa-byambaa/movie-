@@ -2,7 +2,6 @@ import { MoviesContainer } from "@/components/home/MoviesContainer";
 import { MovieCarousel } from "@/components/home/MovieCarousel";
 import { movieResponseType } from "@/types";
 import { getMoviesList } from "@/utils/getDatas";
-import { TrailerSection } from "./TrailerSection";
 import { Pagination } from "./Pagination";
 
 export async function HomePage() {

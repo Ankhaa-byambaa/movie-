@@ -46,7 +46,7 @@ export function MovieCarousel({ trailer }: MovieCarouselProps) {
               <img
                 className=" w-screen "
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-              ></img>
+              />
               <div className="absolute  left-[15%] top-[202px] flex flex-col gap-4">
                 <div className="flex flex-col items-start text-white text-4 ">
                   Now playing:

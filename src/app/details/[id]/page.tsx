@@ -5,7 +5,8 @@ type DetailDynamicPageProps = {
 const DetailDynamicPage = async ({ params }: DetailDynamicPageProps) => {
   const dynamicParams = await params;
   const id = dynamicParams.id;
-  return <div>{id}</div>;
+
+  return <div>{id} </div>;
 };
 
 export default DetailDynamicPage;

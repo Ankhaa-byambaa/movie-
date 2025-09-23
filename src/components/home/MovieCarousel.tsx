@@ -17,6 +17,13 @@ type MovieCarouselProps = {
 };
 
 export function MovieCarousel({ trailer }: MovieCarouselProps) {
+  const backdrop_path = trailer.slice(0, 3).map((movie, index) => {
+    console.log(
+      { index },
+      `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
+    );
+  });
+
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
@@ -36,18 +43,18 @@ export function MovieCarousel({ trailer }: MovieCarouselProps) {
 
   return (
     <>
-      <Carousel setApi={setApi} className="relative">
-        <CarouselContent>
-          {trailer.map((movie, index) => (
+      <Carousel setApi={setApi} className="relative mt-10 -mb-10 z-0 ">
+        <CarouselContent className="z-0">
+          {trailer.slice(0, 10).map((movie, index) => (
             <CarouselItem
               key={index}
-              className="  w-screen  h-[600px] flex justify-center px-0 py-0 relative mt-10 "
+              className="w-screen  h-[600px]  relative  z-0"
             >
               <img
-                className=" w-screen "
+                className="w-full z-0  max-[376px]:w-screen "
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
               />
-              <div className="absolute  left-[15%] top-[202px] flex flex-col gap-4">
+              <div className=" absolute  left-[15%] top-[350px] flex flex-col gap-4">
                 <div className="flex flex-col items-start text-white text-4 ">
                   Now playing:
                   <span className="font-bold text-[36px] text-white">
@@ -63,7 +70,7 @@ export function MovieCarousel({ trailer }: MovieCarouselProps) {
                     </div>
                   </div>
                 </div>
-                <div className="text-[12px] text-white w-[302px] leading-4">
+                <div className="text-[12px] text-white w-[302px] h-[80px] flex overflow-scroll leading-4">
                   {movie.overview}
                 </div>
                 <div className="w-[145px] h-10 py-4 px-2 flex gap-2 bg-white items-center justify-center rounded-md">
@@ -73,13 +80,13 @@ export function MovieCarousel({ trailer }: MovieCarouselProps) {
                   </a>
                 </div>
               </div>
+              <CarouselPrevious className="absolute left-[44px]" />
+              <CarouselNext className="absolute right-[44px]" />
             </CarouselItem>
           ))}
-          <CarouselPrevious className="absolute w-[100px]" />
-          <CarouselNext />
         </CarouselContent>
       </Carousel>
-      <div className="flex gap-2 absolute bottom-4">
+      <div className="flex gap-2 justify-center p-0 z-1 ">
         {Array.from({ length: count }).map((_, index) => (
           <div
             onClick={() => {

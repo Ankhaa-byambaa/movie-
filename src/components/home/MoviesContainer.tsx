@@ -48,26 +48,38 @@ type MoviesContainerProps = {
 
 export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
   return (
-
-
     <div>
       <div className="flex  justify-between w-full  items-center ">
-        <p className="text-[24px] font-bold text-white mb-[52px] mt-[52px]">{title}</p>
+        <p className="text-[24px] font-bold text-white mb-[52px] mt-[52px]">
+          {title}
+        </p>
         <div className="text-[14px] text-white flex items-center flex-row gap-2 px-2 py-4 mr-20 ">
-          See more  ›
+          See more ›
         </div>
       </div>
-
-      <div className="flex gap-4 flex-wrap mr-20">
-        {movies.slice(0, 10).map((movie) => (
-          <MainCard
-            key={movie.id}
-            id={movie.id}
-            title={movie.title}
-            score={movie.vote_average}
-            image={movie.poster_path}
-          />
-        ))}
+      <div className="flex flex-col gap-8">
+        <div className="flex gap-8 overflow-x-scroll mr-20">
+          {movies.slice(0, 5).map((movie) => (
+            <MainCard
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              score={movie.vote_average}
+              image={movie.poster_path}
+            />
+          ))}
+        </div>
+        <div className="flex gap-8 overflow-x-scroll mr-20">
+          {movies.slice(5, 10).map((movie) => (
+            <MainCard
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              score={movie.vote_average}
+              image={movie.poster_path}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -48,13 +48,13 @@ export function MovieCarousel({ trailer }: MovieCarouselProps) {
           {trailer.slice(0, 10).map((movie, index) => (
             <CarouselItem
               key={index}
-              className="w-screen  h-[600px]  relative  z-0"
+              className=" md:h-[600px] h-auto relative  z-0"
             >
               <img
-                className="w-full z-0  max-[376px]:w-screen "
+                className=" z-0 w-screen "
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
               />
-              <div className=" absolute  left-[15%] top-[350px] flex flex-col gap-4">
+              <div className=" absolute  md:left-[15%] md:top-[350px] top-[80%] flex flex-col gap-4">
                 <div className="flex flex-col items-start text-white text-4 ">
                   Now playing:
                   <span className="font-bold text-[36px] text-white">

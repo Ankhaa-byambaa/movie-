@@ -58,7 +58,7 @@ export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
         </div>
       </div>
       <div className="flex flex-col gap-8">
-        <div className="flex gap-8 overflow-x-scroll mr-20">
+        <div className="flex gap-8 md:overflow-x-scroll mr-20 flex-wrap ">
           {movies.slice(0, 5).map((movie) => (
             <MainCard
               key={movie.id}
@@ -69,7 +69,7 @@ export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
             />
           ))}
         </div>
-        <div className="flex gap-8 overflow-x-scroll mr-20">
+        <div className="flex gap-8 md:overflow-x-scroll mr-20 flex-wrap ">
           {movies.slice(5, 10).map((movie) => (
             <MainCard
               key={movie.id}

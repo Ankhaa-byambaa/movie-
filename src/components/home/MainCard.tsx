@@ -16,13 +16,13 @@ export function MainCard({ score, title, image, id }: card1Type) {
     <>
       <Card
         className={
-          "w-[230px] bg-secondary p-0 overflow-hidden gap-2 hover:bg-[#0000004D] h-[440px]"
+          "md:w-[230px] w-[157px] bg-secondary p-0 h-auto overflow-hidden gap-2 hover:bg-[#0000004D] "
         }
       >
-        <CardContent className={"p-0 "}>
-          <div className=" bg-black h-[340px]">
+        <CardContent className="p-0">
+          <div className=" bg-black h-auto">
             <img
-              className="w-[230px]  hover:opacity-50"
+              className="md:w-[230px] w-[157px]  hover:opacity-50"
               src={`https://image.tmdb.org/t/p/w500/${image}`}
             />
           </div>
@@ -34,7 +34,7 @@ export function MainCard({ score, title, image, id }: card1Type) {
             <span className="test-3">{score}/10</span>
           </CardDescription>
 
-          <CardTitle className="text-[18px] text-[#09090B] text-semibold  ">
+          <CardTitle className="md:text-[18px] text-[14px] text-[#09090B] text-semibold  ">
             {title}
           </CardTitle>
         </CardFooter>

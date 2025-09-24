@@ -21,7 +21,6 @@ export async function HomePage() {
         <MoviesContainer movies={upcomingMovies.results} title="Upcoming" />
         <MoviesContainer movies={popularMovies.results} title="Popular" />
         <MoviesContainer movies={topRatedMovies.results} title="Top Rated" />
-        <Pagination />
       </div>
     </>
   );

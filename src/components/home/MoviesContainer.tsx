@@ -49,7 +49,7 @@ type MoviesContainerProps = {
 export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
   return (
     <div>
-      <div className="flex  justify-between w-full  items-center ">
+      <div className="flex justify-between w-full mt-[50px]  items-center ">
         <p className="text-[24px] font-bold text-white mb-[52px] mt-[52px]">
           {title}
         </p>
@@ -58,8 +58,8 @@ export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
         </div>
       </div>
       <div className="flex flex-col gap-8">
-        <div className="flex gap-8 md:overflow-x-scroll mr-20 flex-wrap ">
-          {movies.slice(0, 5).map((movie) => (
+        <div className="  mr-20 gap-[1px] grid grid-flow-row grid-cols-5  lg:overflow-scroll  ">
+          {movies.slice(0, 10).map((movie) => (
             <MainCard
               key={movie.id}
               id={movie.id}
@@ -69,7 +69,7 @@ export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
             />
           ))}
         </div>
-        <div className="flex gap-8 md:overflow-x-scroll mr-20 flex-wrap ">
+        {/* <div className="flex gap-8 md:overflow-x-scroll mr-20 justify-center ">
           {movies.slice(5, 10).map((movie) => (
             <MainCard
               key={movie.id}
@@ -79,7 +79,7 @@ export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
               image={movie.poster_path}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

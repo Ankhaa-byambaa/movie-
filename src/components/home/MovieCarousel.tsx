@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MovieType } from "@/types";
+import { WatchTrailerButton } from "./WatchTrailerButton";
 
 type MovieCarouselProps = {
   trailer: MovieType[];
@@ -43,18 +44,18 @@ export function MovieCarousel({ trailer }: MovieCarouselProps) {
 
   return (
     <>
-      <Carousel setApi={setApi} className="relative mt-10 -mb-10 z-0 ">
-        <CarouselContent className="z-0">
+      <Carousel setApi={setApi} className="relative mt-10 -mb-10  ">
+        <CarouselContent>
           {trailer.slice(0, 10).map((movie, index) => (
             <CarouselItem
               key={index}
-              className=" md:h-[600px] h-auto relative  z-0"
+              className=" md:h-[600px] h-auto relative  "
             >
               <img
-                className=" z-0 w-screen "
+                className=" w-full "
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
               />
-              <div className=" absolute  md:left-[15%] md:top-[350px] top-[80%] flex flex-col gap-4">
+              <div className=" absolute top-[80%]  md:left-[15%] md:top-[50%]  flex flex-col gap-4">
                 <div className="flex flex-col items-start text-white text-4 ">
                   Now playing:
                   <span className="font-bold text-[36px] text-white">
@@ -73,32 +74,27 @@ export function MovieCarousel({ trailer }: MovieCarouselProps) {
                 <div className="text-[12px] text-white w-[302px] h-[80px] flex overflow-scroll leading-4">
                   {movie.overview}
                 </div>
-                <div className="w-[145px] h-10 py-4 px-2 flex gap-2 bg-white items-center justify-center rounded-md">
-                  <img className="h-4" src="play.svg" alt="" />
-                  <a href="#" className="text-[#18181B] text-[14px] leading-5">
-                    Watch Trailer
-                  </a>
-                </div>
+                <WatchTrailerButton movieId={movie.id} />
               </div>
               <CarouselPrevious className="absolute left-[44px]" />
               <CarouselNext className="absolute right-[44px]" />
             </CarouselItem>
           ))}
         </CarouselContent>
+        <div className="flex  gap-2  p-0 absolute  lg:right-[50vh] top-[90%] ">
+          {Array.from({ length: count }).map((_, index) => (
+            <div
+              onClick={() => {
+                api?.scrollTo(index);
+              }}
+              key={index}
+              className={`rounded-full size-2 ${
+                index + 1 === current ? "bg-white" : "bg-gray-600"
+              }`}
+            ></div>
+          ))}
+        </div>
       </Carousel>
-      <div className="flex gap-2 justify-center p-0 z-1 ">
-        {Array.from({ length: count }).map((_, index) => (
-          <div
-            onClick={() => {
-              api?.scrollTo(index);
-            }}
-            key={index}
-            className={`rounded-full size-2 ${
-              index + 1 === current ? "bg-white" : "bg-gray-600"
-            }`}
-          ></div>
-        ))}
-      </div>
     </>
   );
 }

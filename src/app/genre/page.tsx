@@ -1,20 +1,13 @@
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Badge } from "@/components/ui/badge";
+import { DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+
 import { GenreResponseType } from "@/types";
 import { getMovieGenres } from "@/utils/getDatas";
 import { MainCard } from "@/components/home/MainCard";
 import { movieResponseType } from "@/types";
 import { getMoviesByGenreId } from "@/utils/getDatas";
 import { Pagination } from "@/components/home/Pagination";
-import { ChevronDown, ChevronRight, Link } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 type GenrePageProps = {
   searchParams: Promise<{ id: string; name: string; page: string }>;

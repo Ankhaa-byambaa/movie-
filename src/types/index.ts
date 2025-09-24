@@ -9,7 +9,6 @@ export type MovieType = {
   release_date: string;
   title: string;
   vote_average: number;
-  
 };
 
 export type GenreType = {
@@ -17,11 +16,19 @@ export type GenreType = {
   name: string;
 };
 
-
 export type GenreResponseType = {
   genres: GenreType[];
 };
 
+export type TrailerType = {
+  id: string;
+  key: string;
+  type: string;
+};
+export type TrailerResponseType = {
+  id: number;
+  results: TrailerType[];
+};
 export type movieResponseType = {
   page: number;
   totalPages: number;

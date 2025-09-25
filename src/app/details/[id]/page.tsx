@@ -9,9 +9,9 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { MoviesContainer } from "@/components/home/MoviesContainer";
 
-type DetailDynamicPageProps = {
-  params: Promise<{ id: string }>;
-};
+// type DetailDynamicPageProps = {
+//   params: Promise<{ id: string }>;
+// };
 
 export const generateMetadata = async ({ params }: DetailDynamicPageProps) => {
   const dynamicParams = await params;

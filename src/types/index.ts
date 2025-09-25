@@ -16,10 +16,6 @@ export type GenreType = {
   name: string;
 };
 
-export type GenreResponseType = {
-  genres: GenreType[];
-};
-
 export type TrailerType = {
   id: string;
   key: string;
@@ -34,13 +30,10 @@ export type movieResponseType = {
   totalPages: number;
   results: MovieType[];
 };
-type genre = {
-  id: number;
-  name: string;
-};
-type movieDetailsType = {
+
+export type movieDetailsType = {
   adult: boolean;
-  genres: genre[];
+  genres: GenreType[];
   backdrop_path: string;
   original_language: string;
   belongs_to_collection: null;
@@ -57,4 +50,18 @@ type movieDetailsType = {
   tagline: string;
   title: string;
   vote_average: number;
+};
+export type castType = {
+  id: number;
+  known_for_department: string;
+  name: string;
+};
+export type crewType = {
+  id: number;
+  job: string;
+  name: string;
+};
+export type aboutMovie = {
+  cast: castType[];
+  crew: crewType[];
 };

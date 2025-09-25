@@ -17,8 +17,6 @@ import { getMovieGenres } from "@/utils/getDatas";
 export async function GenreDropdown() {
   const genresResponse: GenreResponseType = await getMovieGenres();
 
-  console.log("GENRE RES", genresResponse);
-
   return (
     <>
       <DropdownMenu>

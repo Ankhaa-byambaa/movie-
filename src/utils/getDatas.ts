@@ -21,15 +21,28 @@ export const getMoviesByGenreId = async (genreIds: string, page: string) => {
   const res = await instance.get(
     `discover/movie?language=en&with_genres=${genreIds}&page=${page}`
   );
+
   return res.data;
 };
 
 export const getMovieDetails = async (movieId: string) => {
   const { data } = await instance.get(`movie/${movieId}?language=en-US`);
+
   return data;
 };
 
 export const getMovieTrailers = async (id: string) => {
   const { data } = await instance.get(`movie/${id}/videos?language=en-US`);
+  return data;
+};
+export const getInformatiosAboutDirectorsAndWriters = async (id: string) => {
+  const { data } = await instance.get(`/movie/${id}/credits?language=en-US`);
+  return data;
+};
+
+export const getSimilarMovie = async (id: string) => {
+  const { data } = await instance.get(
+    `/movie/${id}/similar?language=en-US&page=1`
+  );
   return data;
 };

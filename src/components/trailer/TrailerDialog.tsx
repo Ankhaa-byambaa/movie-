@@ -7,15 +7,17 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-export function TrailerDialog({
+export const TrailerDialog = ({
   youtubeKey,
 }: {
   youtubeKey: string | undefined;
-}) {
+}) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Watch trailer</Button>
+        <Button className="border w-[145px] hover:bg-[#00000066] hover:border-white hover:text-white">
+          Watch trailer
+        </Button>
       </DialogTrigger>
       <DialogContent className="p-0 sm:max-w-4xl rounded-none">
         <DialogHeader>
@@ -31,4 +33,4 @@ export function TrailerDialog({
       </DialogContent>
     </Dialog>
   );
-}
+};

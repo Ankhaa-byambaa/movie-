@@ -58,7 +58,7 @@ export const MoviesContainer = ({ movies, title }: MoviesContainerProps) => {
         </div>
       </div>
       <div className="flex flex-col gap-8">
-        <div className="  mr-20 gap-[1px] grid grid-flow-row grid-cols-5  lg:overflow-scroll  ">
+        <div className="  mr-20 gap-[1px] grid grid-flow-row grid-cols-2   lg:grid-cols-5  md:grid-cols-3">
           {movies.slice(0, 10).map((movie) => (
             <MainCard
               key={movie.id}

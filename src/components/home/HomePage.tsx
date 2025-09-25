@@ -12,11 +12,9 @@ export async function HomePage() {
     "now_playing"
   );
 
-  console.log(upcomingMovies);
-
   return (
     <>
-      <MovieCarousel trailer={nowPlayingMovies.results} />
+      <MovieCarousel movies={nowPlayingMovies.results} />
       <div className="ml-20">
         <MoviesContainer movies={upcomingMovies.results} title="Upcoming" />
         <MoviesContainer movies={popularMovies.results} title="Popular" />

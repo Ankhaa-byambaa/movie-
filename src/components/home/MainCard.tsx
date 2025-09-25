@@ -19,7 +19,7 @@ export function MainCard({ score, title, image, id }: card1Type) {
       <Link href={`/details/${id}`}>
         <Card
           className={
-            " w-[157px] bg-secondary p-0 md:w-[230px] overflow-hidden gap-2 hover:bg-[#0000004D] my-8 mx-8"
+            " w-[157px] bg-secondary p-0 2xl:w-[230px] overflow-hidden gap-2 hover:bg-[#0000004D] my-8 mx-8"
           }
         >
           <CardContent className="p-0">

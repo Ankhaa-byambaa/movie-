@@ -6,6 +6,7 @@ import { getMoviesByGenreId } from "@/utils/getDatas";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
+import { Aa } from "@/components/home/Aa";
 
 type GenrePageProps = {
   searchParams: Promise<{ id: string; name: string; page: string }>;
@@ -22,28 +23,12 @@ const Genre = async ({ searchParams }: GenrePageProps) => {
     page
   );
   const genresResponse: GenreResponseType = await getMovieGenres();
+
   return (
     <div className="ml-20 flex justify-center">
-      <div className=" h-[500px]">
-        <p className="text-6 font-bold">Genres</p>
-        <p className="px-2 ">See list of movies by genre</p>
-        <DropdownMenuSeparator />
-        <div className="hover:!bg-transparent max-w-[400px] flex flex-wrap">
-          {genresResponse.genres.map((genre) => (
-            <Link
-              key={genre.id}
-              href={`/genre?id=${genre.id}&name=${genre.name}`}
-            >
-              <div className="text-3">
-                {genre.name}
-                <ChevronRight />
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <Aa genresList={genresResponse.genres} />
 
-      <div className="w-">
+      <div className="">
         <p className="text-white text-[30px] font-bold">Search filter</p>
 
         <div className="text-white text-[20px] font-bold mb-8">{name}</div>

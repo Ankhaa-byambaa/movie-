@@ -13,6 +13,7 @@ import Link from "next/link";
 
 import { GenreResponseType } from "@/types";
 import { getMovieGenres } from "@/utils/getDatas";
+import { AllGenreButton } from "./AllGEnreButton";
 
 export async function GenreDropdown() {
   const genresResponse: GenreResponseType = await getMovieGenres();
@@ -40,10 +41,10 @@ export async function GenreDropdown() {
                 key={genre.id}
                 href={`/genre?id=${genre.id}&name=${genre.name}`}
               >
-                <Button className="hover:border-gray-300 flex flex-row gap-[2px] px-[3px] py-[1px] text-3 bg-[#18181B] rounded-4xl ">
+                <Badge className="hover:border-gray-500 flex flex-row gap-[2px] px-[3px] py-[1px] justify-center text-3 bg-[#18181B] rounded-4xl ">
                   {genre.name}
                   <ChevronRight />
-                </Button>
+                </Badge>
               </Link>
             ))}
           </DropdownMenuItem>

@@ -22,6 +22,7 @@ export const getSearchedMovies = async (searchValue: string) => {
 
 export const getMovieGenres = async () => {
   const res = await instance.get(`genre/movie/list?language=en`);
+  // console.log("GENRERESPONSE", res.data);
   return res.data;
 };
 export const getMoviesByGenreId = async (genreIds: string, page: string) => {

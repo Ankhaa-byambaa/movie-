@@ -49,7 +49,7 @@ export function MovieCarousel({ movies }: MovieCarouselProps) {
         <CarouselNext className="right-13" />
       </Carousel>
       <div className="hidden md:block">
-        <div className="flex gap-2  absolute left-[40%] top-[60%]">
+        <div className="flex gap-2  absolute left-[40%] top-[65%]">
           {Array.from({ length: count }).map((_, index) => (
             <div
               onClick={() => {

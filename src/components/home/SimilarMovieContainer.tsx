@@ -1,6 +1,11 @@
-import { MovieType } from "@/types";
+//similar movie container similar movie card
+// see more darah ued huudasruu oroh '
+//responsive
+import { movieResponseType, MovieType } from "@/types";
 import { MainCard } from "./MainCard";
 import { SeeMore } from "./SeeMore";
+
+import { getSimilarMovieList } from "@/utils/getDatas";
 import { ListName } from "./ListName";
 
 type MoviesContainerProps = {
@@ -9,11 +14,13 @@ type MoviesContainerProps = {
   link: string;
 };
 
-export const MoviesContainer = ({
+export async function SimilarMovieContainer({
   movies,
   title,
   link,
-}: MoviesContainerProps) => {
+}: MoviesContainerProps) {
+  const Movies: movieResponseType = await getSimilarMovieList("28");
+  console.log("similar MOVIE", Movies);
   return (
     <div>
       <div className="flex justify-between w-full mt-[50px]  items-center ">
@@ -35,4 +42,4 @@ export const MoviesContainer = ({
       </div>
     </div>
   );
-};
+}

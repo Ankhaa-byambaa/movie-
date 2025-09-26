@@ -65,3 +65,7 @@ export type aboutMovie = {
   cast: castType[];
   crew: crewType[];
 };
+
+export type GenreResponseType = {
+  genres: GenreType[];
+};

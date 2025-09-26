@@ -9,9 +9,9 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { MoviesContainer } from "@/components/home/MoviesContainer";
 
-// type DetailDynamicPageProps = {
-//   params: Promise<{ id: string }>;
-// };
+type DetailDynamicPageProps = {
+  params: Promise<{ id: string }>;
+};
 
 export const generateMetadata = async ({ params }: DetailDynamicPageProps) => {
   const dynamicParams = await params;
@@ -82,9 +82,12 @@ const DetailDynamicPage = async ({ params }: DetailDynamicPageProps) => {
           </div>
         </div>
         <div className="flex gap-3">
-          {movieDetailData.genres.map((genre) => {
+          {movieDetailData.genres.map((genre, index) => {
             return (
-              <button className="sm:text-[18px] rounded-4xl  border border-gray-300 sm:py-1 sm:px-3 text-[14px] py-0.5 px-1 ">
+              <button
+                key={index}
+                className="sm:text-[18px] rounded-4xl  border border-gray-300 sm:py-1 sm:px-3 text-[14px] py-0.5 px-1 "
+              >
                 {genre.name}
               </button>
             );
@@ -111,7 +114,7 @@ const DetailDynamicPage = async ({ params }: DetailDynamicPageProps) => {
           <p className="font-bold text-[24px] text-white">More like this</p>
           <div className="text-[14px] text-white">see more</div>
         </div>
-        <></>
+        <>{/* <MoviesContainer movies={} title={} link="" /> */}</>
       </div>
     </>
   );

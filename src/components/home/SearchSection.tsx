@@ -64,7 +64,7 @@ export const SearchSection = () => {
                         <div className="flex justify-between items-center w-[543px]">
                           <div>{movie.release_date.slice(0, 4)}</div>
                           {/* <link href="#"> */}
-                          <SeeMore movieId={""} />
+                          {/* <SeeMore listName={`${movie.id}`} /> */}
                           {/* </link> */}
                         </div>
                       </div>

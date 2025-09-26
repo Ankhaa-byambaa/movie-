@@ -6,10 +6,10 @@ import Link from "next/link";
 export function Header() {
   return (
     <>
-      <header className="w-full mt-5 ">
+      <header className="w-full mt-5 mb-10">
         <div className="  w-full  flex justify-between  items-center py-3">
           <div>
-            <Link href={`src/app/page`}>
+            <Link href={`/`}>
               <img
                 src="movie-z.png"
                 className="

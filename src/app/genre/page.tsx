@@ -1,13 +1,11 @@
 import { DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
-
-import { GenreResponseType } from "@/types";
-import { getMovieGenres } from "@/utils/getDatas";
+import { getMovieGenres, getSimilarMovieList } from "@/utils/getDatas";
 import { MainCard } from "@/components/home/MainCard";
-import { movieResponseType } from "@/types";
+import { GenreResponseType, movieResponseType } from "@/types";
 import { getMoviesByGenreId } from "@/utils/getDatas";
-import { Pagination } from "@/components/home/Pagination";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { Slider } from "@/components/ui/slider";
 
 type GenrePageProps = {
   searchParams: Promise<{ id: string; name: string; page: string }>;
@@ -26,7 +24,7 @@ const Genre = async ({ searchParams }: GenrePageProps) => {
   const genresResponse: GenreResponseType = await getMovieGenres();
   return (
     <div className="ml-20 flex justify-center">
-      <div className="">
+      <div className=" h-[500px]">
         <p className="text-6 font-bold">Genres</p>
         <p className="px-2 ">See list of movies by genre</p>
         <DropdownMenuSeparator />
@@ -45,7 +43,7 @@ const Genre = async ({ searchParams }: GenrePageProps) => {
         </div>
       </div>
 
-      <div>
+      <div className="w-">
         <p className="text-white text-[30px] font-bold">Search filter</p>
 
         <div className="text-white text-[20px] font-bold mb-8">{name}</div>
@@ -60,7 +58,6 @@ const Genre = async ({ searchParams }: GenrePageProps) => {
             />
           ))}
         </div>
-        <Pagination />
       </div>
     </div>
   );

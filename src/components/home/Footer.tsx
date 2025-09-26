@@ -1,11 +1,15 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <>
       <div className="max-[375px]:flex-col bg-indigo-700 flex gap-30 py-10 items-start w-full h-[280px] justify-between mt-20  ">
         <div className="ml-20">
-          <span className="text-[#FAFAFA] text-4 flex gap-2 items-start ">
-            <img className="h-5" src={"Logo.png"} />
-          </span>
+          <Link href={"/"}>
+            <span className="text-[#FAFAFA] text-4 flex gap-2 items-start ">
+              <img className="h-5" src={"Logo.png"} />
+            </span>
+          </Link>
 
           <span className="text-[#FAFAFA] text-nowrap">
             © 2024 Movie Z. All Rights Reserved.
@@ -18,13 +22,19 @@ export function Footer() {
               Contact Information
             </span>
 
-            <div className="flex   items-center gap-3 mb-6">
-              <img className="w-4 h-4 " src={"mailIcon.svg"} />
-              <div className="flex flex-col">
-                <p className="text-[#FAFAFA]">Email:</p>
-                <p className="text-[#FAFAFA]">support@movieZ.com</p>
+            <Link
+              href={
+                "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&dsh=S1294101591%3A1758853797890086&ifkv=AfYwgwULzihL08zL1GJqMqDUgqvfJhLXddssHdm_VoFsviQ_BnDiXUMCEZKLOtAX8VS6tvILQ_fH&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+              }
+            >
+              <div className="flex   items-center gap-3 mb-6">
+                <img className="w-4 h-4 " src={"mailIcon.svg"} />
+                <div className="flex flex-col">
+                  <p className="text-[#FAFAFA]">Email:</p>
+                  <p className="text-[#FAFAFA]">support@movieZ.com</p>
+                </div>
               </div>
-            </div>
+            </Link>
             <div className="flex   items-center gap-3 w">
               <img className="w-4 h-4 " src={"phoneIcon.png"} />
               <div className="flex flex-col">

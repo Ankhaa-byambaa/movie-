@@ -26,23 +26,25 @@ export async function GenreDropdown() {
           </Button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent className="" align="start">
+        <DropdownMenuContent className=" mt-5" align="start">
           <DropdownMenuLabel className="text-2xl font-bold">
             Genres
           </DropdownMenuLabel>
-          <p className="px-2">See list of movies by genre</p>
+          <p className="px-2 text/text-foreground text-4">
+            See list of movies by genre
+          </p>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="hover:!bg-transparent max-w-[400px] flex flex-wrap">
+          <DropdownMenuItem className="focus:!bg-accent max-w-[400px] flex flex-wrap">
             {genresResponse.genres.map((genre) => (
-              <link
+              <Link
                 key={genre.id}
                 href={`/genre?id=${genre.id}&name=${genre.name}`}
               >
-                <Badge variant="outline">
+                <Button className="hover:border-gray-300 flex flex-row gap-[2px] px-[3px] py-[1px] text-3 bg-[#18181B] rounded-4xl ">
                   {genre.name}
                   <ChevronRight />
-                </Badge>
-              </link>
+                </Button>
+              </Link>
             ))}
           </DropdownMenuItem>
         </DropdownMenuContent>

@@ -8,5 +8,5 @@ export default async function Page({ searchParams }: PageProps) {
   const value = params.value;
   const getData = await getSearchedMovies(value.toString());
   console.log("GET DATA", getData("28"));
-  return <div></div>;
+  return <div>hi</div>;
 }

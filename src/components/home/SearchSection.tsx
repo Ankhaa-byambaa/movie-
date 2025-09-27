@@ -11,6 +11,8 @@ import Link from "next/link";
 import { getSearchedMovies } from "@/utils/getDatas";
 import { Separator } from "@/components/ui/separator";
 import { SeeMore } from "./SeeMore";
+import { IdSeeMore } from "./IdSeeMore";
+import { SeeAllResultButton } from "./SeeAllResultButton";
 
 export const SearchSection = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -29,6 +31,7 @@ export const SearchSection = () => {
     }
     setFoundMovies(foundData);
   };
+
   return (
     <div>
       <Input
@@ -38,10 +41,11 @@ export const SearchSection = () => {
         placeholder="Search.."
       />
       <div>
-        <Popover open={isOpen}>
+        <Popover aria-label="Update dimensions" open={isOpen}>
           <PopoverTrigger className="hidden "></PopoverTrigger>
           <PopoverContent className="w-[577px] flex flex-col justify-center ml-[30vw] mt-[7vw] ">
             {foundMovies?.results.slice(0, 5).map((movie) => {
+              console.log(movie.id, "movie id");
               return (
                 <div key={movie.id}>
                   <div className=" h-auto flex flex-row gap-4 mb-2 ">
@@ -57,15 +61,15 @@ export const SearchSection = () => {
                         </p>
                         <div className="flex gap-1 flex-row items-center ">
                           <img className="w-[14px] h-[14px]" src={"star.svg"} />
-                          <span className="text-3">
-                            {movie.vote_average}/10
+                          <span className="text-3 flex  ">
+                            {movie.vote_average}/
+                            <p className="text-[12px] flex items-end ">10</p>
                           </span>
                         </div>
                         <div className="flex justify-between items-center w-[543px]">
                           <div>{movie.release_date.slice(0, 4)}</div>
-                          {/* <link href="#"> */}
-                          {/* <SeeMore listName={`${movie.id}`} /> */}
-                          {/* </link> */}
+
+                          <IdSeeMore movieId={`${movie.id}`} />
                         </div>
                       </div>
                     </div>
@@ -74,9 +78,8 @@ export const SearchSection = () => {
                 </div>
               );
             })}
-            <Link href={`/search?value=${searchValue}`}>
-              See all results for {searchValue}
-            </Link>
+
+            <SeeAllResultButton searchValue={`${searchValue}`} />
           </PopoverContent>
         </Popover>
       </div>

@@ -35,11 +35,21 @@ const DetailDynamicPage = async ({ params }: DetailDynamicPageProps) => {
   const movieDetailData: movieDetailsType = await getMovieDetails(id);
 
   const trailerData: TrailerResponseType = await getMovieTrailers(id);
+const getData:aboutMovie = await getInformatiosAboutDirectorsAndWriters(id)
+console.log("GET DATA CAST AND CREW",getData) 
 
+const writers =getData.crew.filter((items)=>{
+  return items.known_for_department==="Writing"
+})
+const stars =getData.cast.filter((items)=>{
+  return items.known_for_department==="Acting"
+})
+const director = getData.crew.find((item)=>item.known_for_department==="Directing")
   const trailer = trailerData.results.find((item) => item.type === "Trailer");
-
-  console.log("director writer star", getMovieTrailers(id));
-  // console.log("DETAILS", movieDetailData);
+  console.log("trailerData",trailerData) 
+  console.log('WRITERS',writers)
+  console.log('DIRECTORS',director)
+  
   return (
     <>
       <div className="flex gap-10 flex-col ml-20 mr-20">
@@ -96,17 +106,20 @@ const DetailDynamicPage = async ({ params }: DetailDynamicPageProps) => {
         <p className="text-white text-[16px] w-auto">
           {movieDetailData.overview}
         </p>
-        <div>
+        <div className="flex flex-col gap-5">
           <div>
             <p className="font-bold text-[14px] text-white">Director</p>
+          <div>{director?.name}</div>
           </div>
           <Separator className="bg-gray-500" />
           <div>
             <p className="font-bold text-[14px] text-white">Writers</p>
+
           </div>
-          <Separator className="bg-gray-500" />{" "}
+          <Separator className="bg-gray-500" />
           <div>
             <p className="font-bold text-[14px] text-white">Stars</p>
+    
           </div>
           <Separator className="bg-gray-500" />
         </div>

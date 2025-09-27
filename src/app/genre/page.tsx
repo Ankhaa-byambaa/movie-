@@ -6,7 +6,7 @@ import { getMoviesByGenreId } from "@/utils/getDatas";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
-import { Aa } from "@/components/home/Aa";
+
 
 type GenrePageProps = {
   searchParams: Promise<{ id: string; name: string; page: string }>;
@@ -26,7 +26,7 @@ const Genre = async ({ searchParams }: GenrePageProps) => {
 
   return (
     <div className="ml-20 flex justify-center">
-      <Aa genresList={genresResponse.genres} />
+
 
       <div className="">
         <p className="text-white text-[30px] font-bold">Search filter</p>

@@ -1,3 +1,7 @@
+export type aboutMovie = {
+  cast: informationsAboutActress[];
+  crew: crew[];
+};
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;
@@ -51,20 +55,18 @@ export type movieDetailsType = {
   title: string;
   vote_average: number;
 };
-export type castType = {
-  id: number;
+export type informationsAboutActress= {
   known_for_department: string;
   name: string;
 };
-export type crewType = {
-  id: number;
+export type crew = {
   job: string;
   name: string;
+  known_for_department:string
+
 };
-export type aboutMovie = {
-  cast: castType[];
-  crew: crewType[];
-};
+
+
 
 export type GenreResponseType = {
   genres: GenreType[];
